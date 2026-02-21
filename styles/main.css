@@ -228,10 +228,46 @@ body {
 .hero-subtitle {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--text-secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero-countdown {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    padding: 1rem 1.75rem;
+    border-radius: 999px;
+    background: rgba(0, 206, 209, 0.08);
+    border: 1px solid rgba(0, 206, 209, 0.5);
+    box-shadow: 0 0 25px rgba(0, 206, 209, 0.2);
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+.countdown-race-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.countdown-timer {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(0, 206, 209, 0.7);
 }
 
 .hero-stats {
@@ -529,6 +565,426 @@ body {
 }
 
 /* ============================================
+   Pilots Section
+   ============================================ */
+.pilots {
+    padding: 6rem 0;
+    background: var(--dark-surface);
+    position: relative;
+}
+
+.pilots .container {
+    max-width: 1400px;
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: rgba(20, 27, 45, 0.6);
+    border: 1px solid rgba(0, 206, 209, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    background: rgba(20, 27, 45, 0.9);
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 206, 209, 0.1);
+}
+
+.team-logo {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    background: transparent;
+    border-radius: 5px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.team-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    flex-grow: 1;
+}
+
+.pilots-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.pilot-card {
+    background: rgba(0, 206, 209, 0.05);
+    border: 1px solid rgba(0, 206, 209, 0.2);
+    border-radius: 15px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.pilot-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: var(--transition);
+}
+
+.pilot-card:hover {
+    background: rgba(0, 206, 209, 0.1);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.pilot-card:hover::before {
+    transform: scaleX(1);
+}
+
+.pilot-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    text-shadow: 0 0 15px rgba(0, 206, 209, 0.5);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.pilot-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================
+   Team Colors
+   ============================================ */
+/* Haas - Blanco transparente */
+.team-haas {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.team-haas:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.team-haas .pilot-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.team-haas .pilot-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.team-haas .pilot-number {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.team-haas .pilot-card::before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+/* Mercedes - Verde esmeralda/Plata */
+.team-mercedes {
+    background: rgba(0, 210, 190, 0.08);
+    border-color: rgba(0, 210, 190, 0.2);
+}
+
+.team-mercedes:hover {
+    background: rgba(0, 210, 190, 0.12);
+    border-color: rgba(0, 210, 190, 0.4);
+}
+
+.team-mercedes .pilot-card {
+    background: rgba(0, 210, 190, 0.05);
+    border-color: rgba(0, 210, 190, 0.15);
+}
+
+.team-mercedes .pilot-card:hover {
+    background: rgba(0, 210, 190, 0.1);
+    border-color: rgba(0, 210, 190, 0.3);
+}
+
+.team-mercedes .pilot-number {
+    color: rgba(0, 210, 190, 1);
+}
+
+.team-mercedes .pilot-card::before {
+    background: linear-gradient(90deg, rgba(0, 210, 190, 0.8) 0%, rgba(0, 210, 190, 0.4) 100%);
+}
+
+/* Red Bull - Azul oscuro/Rojo */
+.team-redbull {
+    background: rgba(30, 55, 153, 0.1);
+    border-color: rgba(220, 20, 60, 0.3);
+}
+
+.team-redbull:hover {
+    background: rgba(30, 55, 153, 0.15);
+    border-color: rgba(220, 20, 60, 0.5);
+}
+
+.team-redbull .pilot-card {
+    background: rgba(30, 55, 153, 0.08);
+    border-color: rgba(220, 20, 60, 0.25);
+}
+
+.team-redbull .pilot-card:hover {
+    background: rgba(30, 55, 153, 0.12);
+    border-color: rgba(220, 20, 60, 0.4);
+}
+
+.team-redbull .pilot-number {
+    color: rgba(220, 20, 60, 1);
+}
+
+.team-redbull .pilot-card::before {
+    background: linear-gradient(90deg, rgba(220, 20, 60, 0.8) 0%, rgba(30, 55, 153, 0.6) 100%);
+}
+
+/* Williams - Azul oscuro */
+.team-williams {
+    background: rgba(0, 90, 156, 0.1);
+    border-color: rgba(0, 90, 156, 0.3);
+}
+
+.team-williams:hover {
+    background: rgba(0, 90, 156, 0.15);
+    border-color: rgba(0, 90, 156, 0.5);
+}
+
+.team-williams .pilot-card {
+    background: rgba(0, 90, 156, 0.08);
+    border-color: rgba(0, 90, 156, 0.25);
+}
+
+.team-williams .pilot-card:hover {
+    background: rgba(0, 90, 156, 0.12);
+    border-color: rgba(0, 90, 156, 0.4);
+}
+
+.team-williams .pilot-number {
+    color: rgba(0, 90, 156, 1);
+}
+
+.team-williams .pilot-card::before {
+    background: linear-gradient(90deg, rgba(0, 90, 156, 0.8) 0%, rgba(0, 90, 156, 0.4) 100%);
+}
+
+/* Sauber - Verde pasto */
+.team-sauber {
+    background: rgba(124, 252, 0, 0.1);
+    border-color: rgba(124, 252, 0, 0.3);
+}
+
+.team-sauber:hover {
+    background: rgba(124, 252, 0, 0.15);
+    border-color: rgba(124, 252, 0, 0.5);
+}
+
+.team-sauber .pilot-card {
+    background: rgba(124, 252, 0, 0.08);
+    border-color: rgba(124, 252, 0, 0.25);
+}
+
+.team-sauber .pilot-card:hover {
+    background: rgba(124, 252, 0, 0.12);
+    border-color: rgba(124, 252, 0, 0.4);
+}
+
+.team-sauber .pilot-number {
+    color: rgba(124, 252, 0, 1);
+}
+
+.team-sauber .pilot-card::before {
+    background: linear-gradient(90deg, rgba(124, 252, 0, 0.8) 0%, rgba(124, 252, 0, 0.4) 100%);
+}
+
+/* Alpine - Azul/Rosa */
+.team-alpine {
+    background: rgba(0, 120, 215, 0.1);
+    border-color: rgba(255, 20, 147, 0.3);
+}
+
+.team-alpine:hover {
+    background: rgba(0, 120, 215, 0.15);
+    border-color: rgba(255, 20, 147, 0.5);
+}
+
+.team-alpine .pilot-card {
+    background: rgba(0, 120, 215, 0.08);
+    border-color: rgba(255, 20, 147, 0.25);
+}
+
+.team-alpine .pilot-card:hover {
+    background: rgba(0, 120, 215, 0.12);
+    border-color: rgba(255, 20, 147, 0.4);
+}
+
+.team-alpine .pilot-number {
+    color: rgba(255, 20, 147, 1);
+}
+
+.team-alpine .pilot-card::before {
+    background: linear-gradient(90deg, rgba(255, 20, 147, 0.8) 0%, rgba(0, 120, 215, 0.6) 100%);
+}
+
+/* Aston Martin - Verde británico */
+.team-astonmartin {
+    background: rgba(0, 98, 60, 0.1);
+    border-color: rgba(0, 98, 60, 0.3);
+}
+
+.team-astonmartin:hover {
+    background: rgba(0, 98, 60, 0.15);
+    border-color: rgba(0, 98, 60, 0.5);
+}
+
+.team-astonmartin .pilot-card {
+    background: rgba(0, 98, 60, 0.08);
+    border-color: rgba(0, 98, 60, 0.25);
+}
+
+.team-astonmartin .pilot-card:hover {
+    background: rgba(0, 98, 60, 0.12);
+    border-color: rgba(0, 98, 60, 0.4);
+}
+
+.team-astonmartin .pilot-number {
+    color: rgba(0, 98, 60, 1);
+}
+
+.team-astonmartin .pilot-card::before {
+    background: linear-gradient(90deg, rgba(0, 98, 60, 0.8) 0%, rgba(0, 98, 60, 0.4) 100%);
+}
+
+/* McLaren - Naranja/Azul */
+.team-mclaren {
+    background: rgba(255, 135, 0, 0.1);
+    border-color: rgba(255, 135, 0, 0.3);
+}
+
+.team-mclaren:hover {
+    background: rgba(255, 135, 0, 0.15);
+    border-color: rgba(255, 135, 0, 0.5);
+}
+
+.team-mclaren .pilot-card {
+    background: rgba(255, 135, 0, 0.08);
+    border-color: rgba(0, 90, 156, 0.25);
+}
+
+.team-mclaren .pilot-card:hover {
+    background: rgba(255, 135, 0, 0.12);
+    border-color: rgba(0, 90, 156, 0.4);
+}
+
+.team-mclaren .pilot-number {
+    color: rgba(255, 135, 0, 1);
+}
+
+.team-mclaren .pilot-card::before {
+    background: linear-gradient(90deg, rgba(255, 135, 0, 0.8) 0%, rgba(0, 90, 156, 0.6) 100%);
+}
+
+/* Ferrari - Rojo */
+.team-ferrari {
+    background: rgba(220, 20, 60, 0.12);
+    border-color: rgba(220, 20, 60, 0.35);
+}
+
+.team-ferrari:hover {
+    background: rgba(220, 20, 60, 0.18);
+    border-color: rgba(220, 20, 60, 0.55);
+}
+
+.team-ferrari .pilot-card {
+    background: rgba(220, 20, 60, 0.1);
+    border-color: rgba(220, 20, 60, 0.3);
+}
+
+.team-ferrari .pilot-card:hover {
+    background: rgba(220, 20, 60, 0.15);
+    border-color: rgba(220, 20, 60, 0.45);
+}
+
+.team-ferrari .pilot-number {
+    color: rgba(220, 20, 60, 1);
+}
+
+.team-ferrari .pilot-card::before {
+    background: linear-gradient(90deg, rgba(220, 20, 60, 0.9) 0%, rgba(220, 20, 60, 0.5) 100%);
+}
+
+/* Racing Bulls - Azul oscuro/Amarillo */
+.team-racingbulls {
+    background: rgba(0, 51, 102, 0.1);
+    border-color: rgba(255, 204, 0, 0.3);
+}
+
+.team-racingbulls:hover {
+    background: rgba(0, 51, 102, 0.15);
+    border-color: rgba(255, 204, 0, 0.5);
+}
+
+.team-racingbulls .pilot-card {
+    background: rgba(0, 51, 102, 0.08);
+    border-color: rgba(255, 204, 0, 0.25);
+}
+
+.team-racingbulls .pilot-card:hover {
+    background: rgba(0, 51, 102, 0.12);
+    border-color: rgba(255, 204, 0, 0.4);
+}
+
+.team-racingbulls .pilot-number {
+    color: rgba(255, 204, 0, 1);
+}
+
+.team-racingbulls .pilot-card::before {
+    background: linear-gradient(90deg, rgba(255, 204, 0, 0.8) 0%, rgba(0, 51, 102, 0.6) 100%);
+}
+
+/* ============================================
    Footer
    ============================================ */
 .footer {
@@ -644,6 +1100,10 @@ body {
     }
 
     .races-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teams-grid {
         grid-template-columns: 1fr;
     }
 
