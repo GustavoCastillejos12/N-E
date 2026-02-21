@@ -278,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentSlide = index;
                     updateCarousel(currentSlide);
                 });
+        });
             });
 
             document.addEventListener('keydown', function(e) {
