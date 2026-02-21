@@ -432,244 +432,185 @@
                 <h2 class="section-title">Pilotos <span class="section-accent">Temporada 7</span></h2>
                 <p class="section-subtitle">Conoce a los pilotos y equipos de la liga</p>
             </div>
-            
-            <!-- Team Carousel -->
-            <div class="team-carousel-wrapper">
-                <!-- Team Header (Logo + Name) -->
-                <div class="carousel-team-header">
-                    <img id="carousel-team-logo" src="images/equipos/haas-logo.png" alt="Team Logo" class="carousel-team-logo" onerror="this.style.display='none'">
-                    <h3 id="carousel-team-name" class="carousel-team-name">Haas</h3>
-                </div>
-
-                <!-- Carousel Container -->
-                <div class="team-carousel">
-                    <button class="carousel-btn carousel-btn-prev" id="carousel-prev" aria-label="Equipo anterior">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="15 18 9 12 15 6"/>
-                        </svg>
-                    </button>
-
-                    <div class="carousel-track">
-                        <!-- Team Slide 1: Haas -->
-                        <div class="carousel-slide active" data-team="haas" data-team-class="team-haas">
-                            <div class="carousel-background">
-                                <img src="images/carros/haas-car.jpg" alt="Haas Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="teams-grid">
+                <!-- Haas -->
+                <div class="team-card team-haas">
+                    <div class="team-header">
+                        <img src="images/equipos/haas-logo.png" alt="Haas Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Haas</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
                         </div>
-
-                        <!-- Team Slide 2: Mercedes -->
-                        <div class="carousel-slide" data-team="mercedes" data-team-class="team-mercedes">
-                            <div class="carousel-background">
-                                <img src="images/carros/mercedes-car.jpg" alt="Mercedes Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 3: Red Bull -->
-                        <div class="carousel-slide" data-team="redbull" data-team-class="team-redbull">
-                            <div class="carousel-background">
-                                <img src="images/carros/redbull-car.jpg" alt="Red Bull Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 4: Williams -->
-                        <div class="carousel-slide" data-team="williams" data-team-class="team-williams">
-                            <div class="carousel-background">
-                                <img src="images/carros/williams-car.jpg" alt="Williams Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 5: Sauber -->
-                        <div class="carousel-slide" data-team="sauber" data-team-class="team-sauber">
-                            <div class="carousel-background">
-                                <img src="images/carros/sauber-car.jpg" alt="Sauber Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 6: Alpine -->
-                        <div class="carousel-slide" data-team="alpine" data-team-class="team-alpine">
-                            <div class="carousel-background">
-                                <img src="images/carros/alpine-car.jpg" alt="Alpine Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 7: Aston Martin -->
-                        <div class="carousel-slide" data-team="astonmartin" data-team-class="team-astonmartin">
-                            <div class="carousel-background">
-                                <img src="images/carros/am-car.jpg" alt="Aston Martin Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 8: McLaren -->
-                        <div class="carousel-slide" data-team="mclaren" data-team-class="team-mclaren">
-                            <div class="carousel-background">
-                                <img src="images/carros/mclaren-car.jpg" alt="McLaren Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 9: Ferrari -->
-                        <div class="carousel-slide" data-team="ferrari" data-team-class="team-ferrari">
-                            <div class="carousel-background">
-                                <img src="images/carros/ferrari-car.png" alt="Ferrari Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Team Slide 10: Racing Bulls -->
-                        <div class="carousel-slide" data-team="racingbulls" data-team-class="team-racingbulls">
-                            <div class="carousel-background">
-                                <img src="images/carros/rb-car.jpg" alt="Racing Bulls Car" class="carousel-car-image" onerror="this.style.display='none'">
-                                <div class="carousel-overlay"></div>
-                            </div>
-                            <div class="carousel-content">
-                                <div class="carousel-pilots">
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 1</h4>
-                                    </div>
-                                    <div class="carousel-pilot-card">
-                                        <div class="carousel-pilot-number">#</div>
-                                        <h4 class="carousel-pilot-name">Piloto 2</h4>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
                         </div>
                     </div>
-
-                    <button class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Siguiente equipo">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"/>
-                        </svg>
-                    </button>
                 </div>
 
-                <!-- Carousel Indicators -->
-                <div class="carousel-indicators">
-                    <button class="carousel-indicator active" data-slide="0" aria-label="Haas"></button>
-                    <button class="carousel-indicator" data-slide="1" aria-label="Mercedes"></button>
-                    <button class="carousel-indicator" data-slide="2" aria-label="Red Bull"></button>
-                    <button class="carousel-indicator" data-slide="3" aria-label="Williams"></button>
-                    <button class="carousel-indicator" data-slide="4" aria-label="Sauber"></button>
-                    <button class="carousel-indicator" data-slide="5" aria-label="Alpine"></button>
-                    <button class="carousel-indicator" data-slide="6" aria-label="Aston Martin"></button>
-                    <button class="carousel-indicator" data-slide="7" aria-label="McLaren"></button>
-                    <button class="carousel-indicator" data-slide="8" aria-label="Ferrari"></button>
-                    <button class="carousel-indicator" data-slide="9" aria-label="Racing Bulls"></button>
+                <!-- Mercedes -->
+                <div class="team-card team-mercedes">
+                    <div class="team-header">
+                        <img src="images/equipos/mercedes-logo.png" alt="Mercedes Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Mercedes</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Red Bull -->
+                <div class="team-card team-redbull">
+                    <div class="team-header">
+                        <img src="images/equipos/redbull-logo.png" alt="Red Bull Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Red Bull</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Williams -->
+                <div class="team-card team-williams">
+                    <div class="team-header">
+                        <img src="images/equipos/williams-logo.png" alt="Williams Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Williams</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sauber -->
+                <div class="team-card team-sauber">
+                    <div class="team-header">
+                        <img src="images/equipos/sauber-logo.png" alt="Sauber Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Sauber</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alpine -->
+                <div class="team-card team-alpine">
+                    <div class="team-header">
+                        <img src="images/equipos/alpine-logo.png" alt="Alpine Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Alpine</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aston Martin -->
+                <div class="team-card team-astonmartin">
+                    <div class="team-header">
+                        <img src="images/equipos/astonmartin-logo.png" alt="Aston Martin Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Aston Martin</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- McLaren -->
+                <div class="team-card team-mclaren">
+                    <div class="team-header">
+                        <img src="images/equipos/mclaren-logo.png" alt="McLaren Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">McLaren</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ferrari -->
+                <div class="team-card team-ferrari">
+                    <div class="team-header">
+                        <img src="images/equipos/ferrari-logo.png" alt="Ferrari Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Ferrari</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Racing Bulls -->
+                <div class="team-card team-racingbulls">
+                    <div class="team-header">
+                        <img src="images/equipos/rb-logo.png" alt="Racing Bulls Logo" class="team-logo" onerror="this.style.display='none'">
+                        <h3 class="team-name">Racing Bulls</h3>
+                    </div>
+                    <div class="pilots-container">
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 1</h4>
+                        </div>
+                        <div class="pilot-card">
+                            <div class="pilot-number">#</div>
+                            <h4 class="pilot-name">Piloto 2</h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
