@@ -565,7 +565,7 @@ body {
 }
 
 /* ============================================
-   Pilots Section
+   Pilots Section - Carousel
    ============================================ */
 .pilots {
     padding: 6rem 0;
@@ -577,118 +577,420 @@ body {
     max-width: 1400px;
 }
 
-.teams-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+.team-carousel-wrapper {
     margin-top: 3rem;
+    position: relative;
 }
 
-.team-card {
-    background: rgba(20, 27, 45, 0.6);
-    border: 1px solid rgba(0, 206, 209, 0.1);
-    border-radius: 20px;
-    padding: 2rem;
-    transition: var(--transition);
-    backdrop-filter: blur(10px);
-    display: flex;
-    flex-direction: column;
-    min-height: 200px;
-}
-
-.team-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-lg);
-    background: rgba(20, 27, 45, 0.9);
-}
-
-.team-header {
+/* Team Header (Logo + Name) */
+.carousel-team-header {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 206, 209, 0.1);
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(20, 27, 45, 0.6);
+    border: 1px solid rgba(0, 206, 209, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
 }
 
-.team-logo {
-    width: 35px;
-    height: 35px;
+.carousel-team-logo {
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    background: transparent;
-    border-radius: 5px;
-    padding: 0;
     flex-shrink: 0;
 }
 
-.team-name {
+.carousel-team-name {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2rem;
+    font-weight: 900;
     color: var(--text-primary);
     margin: 0;
-    flex-grow: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.pilots-container {
+/* Carousel Container */
+.team-carousel {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.carousel-slide.prev {
+    transform: translateX(-100%);
+}
+
+/* Carousel Background with Car Image */
+.carousel-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.carousel-car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.6) contrast(1.1);
+    transition: transform 0.8s ease;
+}
+
+.carousel-slide.active .carousel-car-image {
+    transform: scale(1.05);
+}
+
+.carousel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 14, 26, 0.4) 0%,
+        rgba(10, 14, 26, 0.3) 50%,
+        rgba(10, 14, 26, 0.4) 100%
+    );
+    z-index: 2;
+}
+
+/* Carousel Content */
+.carousel-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.carousel-pilots {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    width: 100%;
 }
 
-.pilot-card {
-    background: rgba(0, 206, 209, 0.05);
-    border: 1px solid rgba(0, 206, 209, 0.2);
-    border-radius: 15px;
-    padding: 1.25rem;
+.carousel-pilot-card {
+    background: rgba(20, 27, 45, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2.5rem;
     text-align: center;
+    backdrop-filter: blur(20px);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
 }
 
-.pilot-card::before {
+.carousel-pilot-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 4px;
     background: var(--gradient-primary);
     transform: scaleX(0);
     transition: var(--transition);
 }
 
-.pilot-card:hover {
-    background: rgba(0, 206, 209, 0.1);
+.carousel-pilot-card:hover {
+    transform: translateY(-10px);
     border-color: var(--primary-color);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
 }
 
-.pilot-card:hover::before {
+.carousel-pilot-card:hover::before {
     transform: scaleX(1);
 }
 
-.pilot-number {
+.carousel-pilot-number {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
+    font-size: 3.5rem;
     font-weight: 900;
     color: var(--primary-color);
-    text-shadow: 0 0 15px rgba(0, 206, 209, 0.5);
-    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(0, 206, 209, 0.6);
+    margin-bottom: 1rem;
     line-height: 1;
 }
 
-.pilot-name {
+.carousel-pilot-name {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--text-primary);
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(20, 27, 45, 0.9);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    color: var(--dark-bg);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.carousel-btn-prev {
+    left: 2rem;
+}
+
+.carousel-btn-next {
+    right: 2rem;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 206, 209, 0.3);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.carousel-indicator:hover {
+    background: rgba(0, 206, 209, 0.6);
+    transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 206, 209, 0.6);
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* Team Colors for Carousel Pilot Cards */
+.carousel-pilot-card.team-haas {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.carousel-pilot-card.team-haas::before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+}
+
+.carousel-pilot-card.team-haas .carousel-pilot-number {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-pilot-card.team-mercedes {
+    border-color: rgba(0, 210, 190, 0.4);
+}
+
+.carousel-pilot-card.team-mercedes::before {
+    background: linear-gradient(90deg, rgba(0, 210, 190, 0.8) 0%, rgba(0, 210, 190, 0.4) 100%);
+}
+
+.carousel-pilot-card.team-mercedes .carousel-pilot-number {
+    color: rgba(0, 210, 190, 1);
+}
+
+.carousel-pilot-card.team-redbull {
+    border-color: rgba(220, 20, 60, 0.4);
+}
+
+.carousel-pilot-card.team-redbull::before {
+    background: linear-gradient(90deg, rgba(220, 20, 60, 0.8) 0%, rgba(30, 55, 153, 0.6) 100%);
+}
+
+.carousel-pilot-card.team-redbull .carousel-pilot-number {
+    color: rgba(220, 20, 60, 1);
+}
+
+.carousel-pilot-card.team-williams {
+    border-color: rgba(0, 90, 156, 0.4);
+}
+
+.carousel-pilot-card.team-williams::before {
+    background: linear-gradient(90deg, rgba(0, 90, 156, 0.8) 0%, rgba(0, 90, 156, 0.4) 100%);
+}
+
+.carousel-pilot-card.team-williams .carousel-pilot-number {
+    color: rgba(0, 90, 156, 1);
+}
+
+.carousel-pilot-card.team-sauber {
+    border-color: rgba(124, 252, 0, 0.4);
+}
+
+.carousel-pilot-card.team-sauber::before {
+    background: linear-gradient(90deg, rgba(124, 252, 0, 0.8) 0%, rgba(124, 252, 0, 0.4) 100%);
+}
+
+.carousel-pilot-card.team-sauber .carousel-pilot-number {
+    color: rgba(124, 252, 0, 1);
+}
+
+.carousel-pilot-card.team-alpine {
+    border-color: rgba(255, 20, 147, 0.4);
+}
+
+.carousel-pilot-card.team-alpine::before {
+    background: linear-gradient(90deg, rgba(255, 20, 147, 0.8) 0%, rgba(0, 120, 215, 0.6) 100%);
+}
+
+.carousel-pilot-card.team-alpine .carousel-pilot-number {
+    color: rgba(255, 20, 147, 1);
+}
+
+.carousel-pilot-card.team-astonmartin {
+    border-color: rgba(0, 98, 60, 0.4);
+}
+
+.carousel-pilot-card.team-astonmartin::before {
+    background: linear-gradient(90deg, rgba(0, 98, 60, 0.8) 0%, rgba(0, 98, 60, 0.4) 100%);
+}
+
+.carousel-pilot-card.team-astonmartin .carousel-pilot-number {
+    color: rgba(0, 98, 60, 1);
+}
+
+.carousel-pilot-card.team-mclaren {
+    border-color: rgba(255, 135, 0, 0.4);
+}
+
+.carousel-pilot-card.team-mclaren::before {
+    background: linear-gradient(90deg, rgba(255, 135, 0, 0.8) 0%, rgba(0, 90, 156, 0.6) 100%);
+}
+
+.carousel-pilot-card.team-mclaren .carousel-pilot-number {
+    color: rgba(255, 135, 0, 1);
+}
+
+.carousel-pilot-card.team-ferrari {
+    border-color: rgba(220, 20, 60, 0.5);
+}
+
+.carousel-pilot-card.team-ferrari::before {
+    background: linear-gradient(90deg, rgba(220, 20, 60, 0.9) 0%, rgba(220, 20, 60, 0.5) 100%);
+}
+
+.carousel-pilot-card.team-ferrari .carousel-pilot-number {
+    color: rgba(220, 20, 60, 1);
+}
+
+.carousel-pilot-card.team-racingbulls {
+    border-color: rgba(255, 204, 0, 0.4);
+}
+
+.carousel-pilot-card.team-racingbulls::before {
+    background: linear-gradient(90deg, rgba(255, 204, 0, 0.8) 0%, rgba(0, 51, 102, 0.6) 100%);
+}
+
+.carousel-pilot-card.team-racingbulls .carousel-pilot-number {
+    color: rgba(255, 204, 0, 1);
+}
+
+/* Responsive Design for Carousel */
+@media (max-width: 768px) {
+    .team-carousel {
+        height: 500px;
+    }
+
+    .carousel-pilots {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel-btn-prev {
+        left: 1rem;
+    }
+
+    .carousel-btn-next {
+        right: 1rem;
+    }
+
+    .carousel-team-name {
+        font-size: 1.5rem;
+    }
+
+    .carousel-pilot-number {
+        font-size: 2.5rem;
+    }
+
+    .carousel-pilot-name {
+        font-size: 1.2rem;
+    }
 }
 
 /* ============================================

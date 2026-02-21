@@ -194,4 +194,114 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     initRaceCountdown();
+
+    // ============================================
+    // Team Carousel
+    // ============================================
+    const carouselSlides = document.querySelectorAll('.carousel-slide');
+    const carouselIndicators = document.querySelectorAll('.carousel-indicator');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const teamLogo = document.getElementById('carousel-team-logo');
+    const teamName = document.getElementById('carousel-team-name');
+    
+    if (carouselSlides.length > 0) {
+        let currentSlide = 0;
+        const totalSlides = carouselSlides.length;
+
+        // Team data for header updates
+        const teamData = [
+            { name: 'Haas', logo: 'images/equipos/haas-logo.png', class: 'team-haas' },
+            { name: 'Mercedes', logo: 'images/equipos/mercedes-logo.png', class: 'team-mercedes' },
+            { name: 'Red Bull', logo: 'images/equipos/redbull-logo.png', class: 'team-redbull' },
+            { name: 'Williams', logo: 'images/equipos/williams-logo.png', class: 'team-williams' },
+            { name: 'Sauber', logo: 'images/equipos/sauber-logo.png', class: 'team-sauber' },
+            { name: 'Alpine', logo: 'images/equipos/alpine-logo.png', class: 'team-alpine' },
+            { name: 'Aston Martin', logo: 'images/equipos/astonmartin-logo.png', class: 'team-astonmartin' },
+            { name: 'McLaren', logo: 'images/equipos/mclaren-logo.png', class: 'team-mclaren' },
+            { name: 'Ferrari', logo: 'images/equipos/ferrari-logo.png', class: 'team-ferrari' },
+            { name: 'Racing Bulls', logo: 'images/equipos/rb-logo.png', class: 'team-racingbulls' }
+        ];
+
+        function updateCarousel(slideIndex) {
+            // Remove active class from all slides and indicators
+            carouselSlides.forEach(slide => slide.classList.remove('active', 'prev'));
+            carouselIndicators.forEach(indicator => indicator.classList.remove('active'));
+
+            // Add active class to current slide and indicator
+            carouselSlides[slideIndex].classList.add('active');
+            carouselIndicators[slideIndex].classList.add('active');
+
+            // Add prev class to previous slide for animation
+            const prevIndex = slideIndex === 0 ? totalSlides - 1 : slideIndex - 1;
+            carouselSlides[prevIndex].classList.add('prev');
+
+            // Update team header
+            const team = teamData[slideIndex];
+            teamName.textContent = team.name;
+            teamLogo.src = team.logo;
+            teamLogo.alt = `${team.name} Logo`;
+            teamLogo.style.display = 'block';
+
+            // Apply team colors to pilot cards
+            const pilotCards = carouselSlides[slideIndex].querySelectorAll('.carousel-pilot-card');
+            pilotCards.forEach(card => {
+                // Remove all team color classes
+                card.classList.remove('team-haas', 'team-mercedes', 'team-redbull', 'team-williams', 
+                                     'team-sauber', 'team-alpine', 'team-astonmartin', 
+                                     'team-mclaren', 'team-ferrari', 'team-racingbulls');
+                // Add current team class
+                card.classList.add(team.class);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel(currentSlide);
+        }
+
+        // Event listeners
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+        // Indicator clicks
+        carouselIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel(currentSlide);
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+
+        // Auto-play (optional - can be disabled)
+        let autoPlayInterval;
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Pause on hover
+        const carousel = document.querySelector('.team-carousel');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', stopAutoPlay);
+            carousel.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // Initialize carousel
+        updateCarousel(0);
+        // startAutoPlay(); // Uncomment to enable auto-play
+    }
 });
