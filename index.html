@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N&E Series - Temporada 7 | Liga F1 25</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1 class="logo-text">N&E <span class="logo-accent">Series</span></h1>
+                    <p class="logo-subtitle">F1 25 Championship</p>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                        <li><a href="#temporada" class="nav-link">Temporada 7</a></li>
+                        <li><a href="#clasificacion" class="nav-link">Clasificación</a></li>
+                        <li><a href="#calendario" class="nav-link">Calendario</a></li>
+                        <li><a href="#pilotos" class="nav-link">Pilotos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">Temporada 7</span>
+                </div>
+                <h2 class="hero-title">
+                    Bienvenido a <span class="highlight">N&E Series</span>
+                </h2>
+                <p class="hero-subtitle">
+                    La liga más competitiva de F1 25. Vive la emoción de la velocidad,
+                    la estrategia y la pasión por las carreras.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Temporada</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Carreras</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">20</div>
+                        <div class="stat-label">Pilotos</div>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#temporada" class="btn btn-primary">Explorar Temporada</a>
+                    <a href="#clasificacion" class="btn btn-secondary">Ver Clasificación</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Competencia Élite</h3>
+                    <p class="feature-description">
+                        Los mejores pilotos compiten en cada carrera con estrategias
+                        y habilidades de nivel profesional.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Calendario Completo</h3>
+                    <p class="feature-description">
+                        Sigue todas las carreras de la temporada con horarios,
+                        circuitos y resultados en tiempo real.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Comunidad Activa</h3>
+                    <p class="feature-description">
+                        Únete a una comunidad apasionada de pilotos y aficionados
+                        que comparten la misma pasión por las carreras.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar" id="calendario">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Calendario <span class="section-accent">Temporada 7</span></h2>
+                <p class="section-subtitle">Todas las carreras programadas para esta temporada</p>
+            </div>
+            <div class="races-grid">
+                <!-- R1 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r1-silverstone.jpg" alt="Silverstone Circuit" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R1</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Silverstone</h3>
+                        <p class="race-country">Great Britain</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>21 de febrero de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R2 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r2-silverstone.jpg" alt="Silverstone Circuit" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R2</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Silverstone</h3>
+                        <p class="race-country">Great Britain</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>28 de febrero de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R3 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r3-australia.jpeg" alt="Melbourne Circuit" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R3</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Melbourne</h3>
+                        <p class="race-country">Australia</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>7 de marzo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R4 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r4-china.jpg" alt="Shangai Circuit" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R4</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Shangai</h3>
+                        <p class="race-country">China</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>14 de marzo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R5 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r5-monza.jpg" alt="Monza Circuit" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R5</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Monza</h3>
+                        <p class="race-country">Italy</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>21 de marzo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R6 - Espacio para agregar manualmente -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r6-spa.jpeg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R6</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Spa-Francorchamps</h3>
+                        <p class="race-country">Belgium</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>28 de marzo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R7 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r7-zandvoort.jpeg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R7</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Zandvoort</h3>
+                        <p class="race-country">Netherlands</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>4 de abril de 2026 </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R8 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r8-zandvoort.jpeg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R8</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Zandvoort</h3>
+                        <p class="race-country">Netherlands</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>4 de abril de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R9 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r9-qatar.jpg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R9</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Lusail</h3>
+                        <p class="race-country">Qatar</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>18 de abril de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R10 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r10-miami.jpeg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R10</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Miami</h3>
+                        <p class="race-country">United States</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>25 de abril de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R11 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r11-abu.jpeg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R11</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Yas Marina</h3>
+                        <p class="race-country">Abu Dhabi</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>2 de mayo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R12 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r12-brasil.jpg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R12</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Interlagos</h3>
+                        <p class="race-country">Brazil</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>16 de mayo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R13 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r13-arab.jpeg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R13</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Jeddah</h3>
+                        <p class="race-country">Arabia Saudita</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>23 de mayo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R14 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r14-rb.jpg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R14</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Red Bull Ring</h3>
+                        <p class="race-country">Austria</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>30 de mayo de 2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R15 -->
+                <div class="race-card">
+                    <div class="race-image-container">
+                        <img src="images/circuitos/r15-rb.jpeg" alt="Circuito" class="race-image" onerror="this.src='images/circuitos/placeholder.jpg'">
+                        <div class="race-number">R15</div>
+                    </div>
+                    <div class="race-info">
+                        <h3 class="race-circuit">Red Bull Ring</h3>
+                        <p class="race-country">Austria</p>
+                        <div class="race-date">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <span>6 de junio de 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">N&E Series</h3>
+                    <p class="footer-tagline">F1 25 Championship League</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Liga</h4>
+                        <ul class="footer-list">
+                            <li><a href="#temporada">Temporada 7</a></li>
+                            <li><a href="#clasificacion">Clasificación</a></li>
+                            <li><a href="#calendario">Calendario</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Información</h4>
+                        <ul class="footer-list">
+                            <li><a href="#pilotos">Pilotos</a></li>
+                            <li><a href="#reglamento">Reglamento</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 N&E Series. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
